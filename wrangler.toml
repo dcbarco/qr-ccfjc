@@ -1,0 +1,10 @@
+name = "qr-ccfjc"
+pages_build_output_dir = "public"
+compatibility_date = "2026-09-25"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "qr-ccfjc"
+# Reemplazar con el ID real de la base D1: Cloudflare dashboard -> Storage & Databases -> D1 ->
+# qr-ccfjc -> "Database ID" (o la salida de `npx wrangler d1 create qr-ccfjc`).
+database_id = "749e88d3-d092-42e6-b0a0-7e6e68a5fee4"

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light">
+  <title>QR//DINÁMICOS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+
+  <!-- LOGIN -->
+  <section id="login" class="login" hidden aria-labelledby="login-title">
+    <form id="login-form" class="login-box" novalidate>
+      <h1 id="login-title" class="brand">QR//DINÁMICOS</h1>
+      <label class="lbl" for="login-token">Token de administración</label>
+      <input id="login-token" name="token" type="password" autocomplete="current-password"
+             spellcheck="false" autocapitalize="off" required>
+      <button type="submit" class="btn btn-primary">Entrar</button>
+      <p id="login-msg" class="msg" role="alert" aria-live="assertive"></p>
+    </form>
+  </section>
+
+  <!-- APP -->
+  <div id="app" hidden>
+    <header class="bar">
+      <h1 class="brand">QR//DINÁMICOS</h1>
+      <span id="counter" class="counter" aria-label="Códigos usados">--/20</span>
+      <div class="bar-actions">
+        <button id="reload-btn" type="button" class="btn btn-sm">Recargar</button>
+        <button id="logout-btn" type="button" class="btn btn-sm">Salir</button>
+      </div>
+    </header>
+
+    <main id="main">
+      <form id="create-form" class="create" novalidate>
+        <div class="field">
+          <label class="lbl" for="new-label">Etiqueta (opcional)</label>
+          <input id="new-label" name="label" type="text" maxlength="60" autocomplete="off"
+                 placeholder="Folleto feria">
+        </div>
+        <div class="field field-grow">
+          <label class="lbl" for="new-target">URL destino (opcional)</label>
+          <input id="new-target" name="target" type="url" maxlength="2048" autocomplete="off"
+                 inputmode="url" spellcheck="false" placeholder="https://…">
+        </div>
+        <button id="create-btn" type="submit" class="btn btn-primary">+ Nuevo link-QR</button>
+        <p id="create-msg" class="msg create-msg" role="status" aria-live="polite"></p>
+      </form>
+
+      <p id="list-status" class="list-status" role="status" aria-live="polite"></p>
+      <ul id="list" class="grid" aria-label="Códigos QR"></ul>
+    </main>
+  </div>
+
+  <!-- QR library (qrcode-generator, MIT, vendored) -->
+  <script src="vendor/qrcode.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
